@@ -21,5 +21,5 @@ FROM base AS server
 RUN npm run build
 
 # https://hub.docker.com/_/nginx#hosting-some-simple-static-content
-FROM nginx
+FROM nginx:stable-alpine
 COPY --from=server /app/build /usr/share/nginx/html
